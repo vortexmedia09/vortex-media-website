@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+:root {
+  --cream: #F7F3EC;
+  --dark: #0A0A0F;
+  --navy: #16181F;
+  --accent: #F2552C;
+  --gold: #D4A853;
+  --blue: #3B82F6;
+  --text: #16181F;
+  --text-2: #4A4A5A;
+  --text-3: #8A8A9A;
+  --font-display: 'Space Grotesk', sans-serif;
+  --font-body: 'Inter', sans-serif;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior: auto; }
+body { font-family: var(--font-body); background: var(--cream); color: var(--text); overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+a { text-decoration: none; color: inherit; }
+::selection { background: var(--accent); color: #fff; }
+
+/* Smooth scroll container */
+html.lenis, html.lenis body { height: auto; }
+.lenis.lenis-smooth { scroll-behavior: auto !important; }
