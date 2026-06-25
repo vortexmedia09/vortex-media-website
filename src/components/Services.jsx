@@ -3,12 +3,12 @@ import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 const SERVICES = [
-  { icon: '📱', title: 'Social Media Management', desc: 'Instagram, Facebook, LinkedIn — strategy, content creation, scheduling, and analytics across all platforms.', color: '#F2552C' },
-  { icon: '🎨', title: 'Brand Identity & Design', desc: 'Logo design, brand guidelines, visual systems — everything your brand needs to stand out and stay consistent.', color: '#D4A853' },
-  { icon: '🌐', title: 'Website & Landing Pages', desc: 'High-converting websites built for speed, SEO, and results. From single pages to full web experiences.', color: '#3B82F6' },
-  { icon: '📸', title: 'Content Production', desc: 'Photography, videography, reels, motion graphics — we create content that captures attention and tells stories.', color: '#10B981' },
-  { icon: '📊', title: 'Performance Marketing', desc: 'Meta Ads, Google Ads — targeted campaigns optimized for leads, conversions, and maximum ROI.', color: '#8B5CF6' },
-  { icon: '🔍', title: 'SEO & Local Presence', desc: 'Google My Business, local SEO, reputation management — dominate search results in your area.', color: '#F59E0B' },
+  { title: 'Social Media Management', desc: 'Instagram, Facebook, LinkedIn \u2014 strategy, content, scheduling, and analytics.', color: '#F2552C' },
+  { title: 'Brand Identity & Design', desc: 'Logo, brand guidelines, visual systems \u2014 everything to stand out and stay consistent.', color: '#D4A853' },
+  { title: 'Website & Landing Pages', desc: 'High-converting websites built for speed, SEO, and results.', color: '#3B82F6' },
+  { title: 'Content Production', desc: 'Photography, videography, reels, motion graphics \u2014 content that captures.', color: '#10B981' },
+  { title: 'Performance Marketing', desc: 'Meta Ads, Google Ads \u2014 targeted campaigns optimized for maximum ROI.', color: '#8B5CF6' },
+  { title: 'SEO & Local Presence', desc: 'Google My Business, local SEO, reputation management \u2014 dominate search.', color: '#F59E0B' },
 ]
 
 export default function Services() {
@@ -21,24 +21,28 @@ export default function Services() {
   }, [])
 
   return (
-    <section id="services" ref={ref} style={{ padding: '100px 24px 120px', background: 'var(--navy)' }}>
-      <div style={{ maxWidth: 1100, margin: '0 auto' }}>
-        <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.2em', textTransform: 'uppercase', color: 'var(--accent)', marginBottom: 16 }}>What We Do</div>
-        <h2 style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(32px, 5vw, 48px)', fontWeight: 700, lineHeight: 1.1, letterSpacing: '-0.03em', color: '#fff', marginBottom: 48 }}>
-          Services that move the needle<span style={{ color: 'var(--accent)' }}>.</span>
+    <section id="services" ref={ref} style={{ padding: '120px 24px' }}>
+      <div style={{
+        maxWidth: 1100, margin: '0 auto',
+        background: 'rgba(10,10,15,0.5)', backdropFilter: 'blur(40px)', WebkitBackdropFilter: 'blur(40px)',
+        border: '1px solid rgba(255,255,255,0.06)', borderRadius: 24, padding: 'clamp(32px, 5vw, 56px)',
+      }}>
+        <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.2em', textTransform: 'uppercase', color: '#F2552C', marginBottom: 16 }}>What We Do</div>
+        <h2 style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(28px, 4vw, 44px)', fontWeight: 700, lineHeight: 1.1, letterSpacing: '-0.03em', color: '#fff', marginBottom: 40 }}>
+          Services that move the needle<span style={{ color: '#F2552C' }}>.</span>
         </h2>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: 20 }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 16 }}>
           {SERVICES.map(s => (
             <div key={s.title} className="svc-card" style={{
-              padding: 28, borderRadius: 16,
-              background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)',
+              padding: 24, borderRadius: 14,
+              background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.06)',
               transition: 'background 0.3s, border-color 0.3s',
             }}
-              onMouseEnter={e => { e.currentTarget.style.background = 'rgba(255,255,255,0.08)'; e.currentTarget.style.borderColor = s.color + '44' }}
-              onMouseLeave={e => { e.currentTarget.style.background = 'rgba(255,255,255,0.04)'; e.currentTarget.style.borderColor = 'rgba(255,255,255,0.08)' }}>
-              <div style={{ fontSize: 32, marginBottom: 16 }}>{s.icon}</div>
-              <h3 style={{ fontFamily: 'var(--font-display)', fontSize: 18, fontWeight: 700, color: '#fff', marginBottom: 8 }}>{s.title}</h3>
-              <p style={{ fontSize: 13, lineHeight: 1.7, color: 'rgba(255,255,255,0.5)' }}>{s.desc}</p>
+              onMouseEnter={e => { e.currentTarget.style.background = 'rgba(255,255,255,0.07)'; e.currentTarget.style.borderColor = s.color + '44' }}
+              onMouseLeave={e => { e.currentTarget.style.background = 'rgba(255,255,255,0.03)'; e.currentTarget.style.borderColor = 'rgba(255,255,255,0.06)' }}>
+              <div style={{ width: 6, height: 6, borderRadius: '50%', background: s.color, marginBottom: 16, boxShadow: '0 0 12px ' + s.color + '66' }} />
+              <h3 style={{ fontFamily: 'var(--font-display)', fontSize: 16, fontWeight: 700, color: '#fff', marginBottom: 8 }}>{s.title}</h3>
+              <p style={{ fontSize: 13, lineHeight: 1.7, color: 'rgba(255,255,255,0.4)' }}>{s.desc}</p>
             </div>
           ))}
         </div>

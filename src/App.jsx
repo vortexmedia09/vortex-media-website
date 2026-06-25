@@ -1,8 +1,9 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import Lenis from 'lenis'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import ParticleUniverse from './components/ParticleUniverse'
+import Preloader from './components/Preloader'
+import LaunchScene from './components/LaunchScene'
 import Nav from './components/Nav'
 import Hero from './components/Hero'
 import About from './components/About'
@@ -15,19 +16,24 @@ import Footer from './components/Footer'
 gsap.registerPlugin(ScrollTrigger)
 
 export default function App() {
+  const [loaded, setLoaded] = useState(false)
+
   useEffect(() => {
-    const lenis = new Lenis({ duration: 1.2, easing: t => Math.min(1, 1.001 - Math.pow(2, -10 * t)) })
+    if (!loaded) return
+    const lenis = new Lenis({ duration: 1.4, easing: t => Math.min(1, 1.001 - Math.pow(2, -10 * t)) })
     function raf(time) { lenis.raf(time); requestAnimationFrame(raf) }
     requestAnimationFrame(raf)
     lenis.on('scroll', ScrollTrigger.update)
     gsap.ticker.add(time => lenis.raf(time * 1000))
     gsap.ticker.lagSmoothing(0)
-    return () => { lenis.destroy(); gsap.ticker.remove(lenis.raf) }
-  }, [])
+    return () => { lenis.destroy() }
+  }, [loaded])
+
+  if (!loaded) return <Preloader onComplete={() => setLoaded(true)} />
 
   return (
     <>
-      <ParticleUniverse />
+      <LaunchScene />
       <div style={{ position: 'relative', zIndex: 1 }}>
         <Nav />
         <Hero />
