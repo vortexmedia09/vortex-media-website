@@ -5,6 +5,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import Preloader from './components/Preloader'
 import LaunchScene from './components/LaunchScene'
 import CustomCursor from './components/CustomCursor'
+import ScrollRocket from './components/ScrollRocket'
 import { BRAND, PILLARS, INDUSTRIES, PROCESS, SERVICES, WHY_US, RESULTS } from './data/content'
 
 gsap.registerPlugin(ScrollTrigger)
@@ -67,6 +68,7 @@ export default function App() {
   return (
     <>
       <CustomCursor />
+      <ScrollRocket />
       <LaunchScene />
 
       <div className="content-layer">
@@ -86,9 +88,6 @@ export default function App() {
 
         {/* ═══ 01: HERO — Full viewport, huge type ═══ */}
         <section className="s-hero">
-          <div className="hero-logo" data-reveal="0">
-            <img src="/vortex-rocket.png" alt="Vortex Media" />
-          </div>
           <h1 data-reveal="0.1">
             <span className="line">We Launch</span>
             <span className="line"><em>Brands</em> Into</span>
