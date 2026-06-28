@@ -82,10 +82,10 @@ function VortexParticles({ count = 1200 }) {
         <bufferAttribute attach="attributes-color" count={count} array={colors} itemSize={3} />
       </bufferGeometry>
       <pointsMaterial
-        size={0.08}
+        size={0.12}
         vertexColors
         transparent
-        opacity={0.55}
+        opacity={0.75}
         sizeAttenuation
         depthWrite={false}
       />
@@ -107,9 +107,9 @@ function FloatingRings() {
   return (
     <group ref={group}>
       {[
-        { radius: 8, tube: 0.02, color: '#F2552C', opacity: 0.12 },
-        { radius: 12, tube: 0.015, color: '#D4A853', opacity: 0.08 },
-        { radius: 16, tube: 0.01, color: '#3B82F6', opacity: 0.06 },
+        { radius: 8, tube: 0.02, color: '#F2552C', opacity: 0.18 },
+        { radius: 12, tube: 0.015, color: '#D4A853', opacity: 0.14 },
+        { radius: 16, tube: 0.01, color: '#3B82F6', opacity: 0.10 },
       ].map((r, i) => (
         <mesh key={i} rotation={[Math.PI * 0.3 * i, 0, Math.PI * 0.2 * i]}>
           <torusGeometry args={[r.radius, r.tube, 16, 100]} />
@@ -154,7 +154,7 @@ export default function LaunchScene() {
       >
         <color attach="background" args={['#F7F3EC']} />
         <ambientLight intensity={0.8} />
-        <VortexParticles count={1500} />
+        <VortexParticles count={2000} />
         <FloatingRings />
         <CameraController />
       </Canvas>

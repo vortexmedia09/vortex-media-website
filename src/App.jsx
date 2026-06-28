@@ -36,18 +36,7 @@ export default function App() {
       })
     })
 
-    // Horizontal scroll for services
-    const hSection = document.querySelector('.h-scroll-wrap')
-    if (hSection) {
-      const hInner = hSection.querySelector('.h-scroll-inner')
-      if (hInner) {
-        gsap.to(hInner, {
-          x: () => -(hInner.scrollWidth - window.innerWidth + 100),
-          ease: 'none',
-          scrollTrigger: { trigger: hSection, start: 'top top', end: () => '+=' + hInner.scrollWidth, scrub: 1, pin: true }
-        })
-      }
-    }
+
 
     // Counter animations
     document.querySelectorAll('[data-count]').forEach(el => {
@@ -123,20 +112,23 @@ export default function App() {
           </div>
         </section>
 
-        {/* ═══ 03: SERVICES — Horizontal scroll cards ═══ */}
-        <section className="s-services h-scroll-wrap" id="services">
-          <div className="h-scroll-inner">
-            <div className="h-scroll-intro">
+        {/* ═══ 03: SERVICES ═══ */}
+        <section className="s-services" id="services">
+          <div className="container">
+            <div className="svc-header" data-reveal="0">
               <span className="label">What We Deliver</span>
               <h2>Six engines<br />of growth<em>.</em></h2>
             </div>
-            {SERVICES.map((s,i) => (
-              <div key={s.title} className="svc-panel interactive" style={{'--svc': s.color}}>
-                <div className="svc-num">{String(i+1).padStart(2,'0')}</div>
-                <h3>{s.title}</h3>
-                <ul>{s.items.map(item => <li key={item}>{item}</li>)}</ul>
-              </div>
-            ))}
+            <div className="svc-grid" data-reveal="0.1">
+              {SERVICES.map((s,i) => (
+                <div key={s.title} className="svc-card interactive" style={{'--svc': s.color}}>
+                  <div className="svc-num">{String(i+1).padStart(2,'0')}</div>
+                  <div className="svc-line" />
+                  <h3>{s.title}</h3>
+                  <ul>{s.items.map(item => <li key={item}>{item}</li>)}</ul>
+                </div>
+              ))}
+            </div>
           </div>
         </section>
 
