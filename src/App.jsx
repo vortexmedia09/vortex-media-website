@@ -3,7 +3,7 @@ import Lenis from 'lenis'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import Preloader from './components/Preloader'
-import InkShader from './components/InkShader'
+import CloudScene from './components/CloudScene'
 import CustomCursor from './components/CustomCursor'
 import { BRAND, SERVICES, PROCESS, WHY_US } from './data/content'
 
