@@ -1,5 +1,20 @@
 import { useRef, useMemo, useEffect } from 'react'
 import { Canvas, useFrame, useThree } from '@react-three/fiber'
+
+// Create circular particle texture
+function makeCircleTexture() {
+  const canvas = document.createElement('canvas')
+  canvas.width = 64; canvas.height = 64
+  const ctx = canvas.getContext('2d')
+  const gradient = ctx.createRadialGradient(32, 32, 0, 32, 32, 32)
+  gradient.addColorStop(0, 'rgba(255,255,255,1)')
+  gradient.addColorStop(0.4, 'rgba(255,255,255,0.8)')
+  gradient.addColorStop(1, 'rgba(255,255,255,0)')
+  ctx.fillStyle = gradient
+  ctx.fillRect(0, 0, 64, 64)
+  return new THREE.CanvasTexture(canvas)
+}
+const circleTexture = makeCircleTexture()
 import * as THREE from 'three'
 
 // Volumetric cloud layer
@@ -81,7 +96,7 @@ function VortexTunnel({ count = 2000 }) {
         <bufferAttribute attach="attributes-position" count={count} array={pos} itemSize={3} />
         <bufferAttribute attach="attributes-color" count={count} array={colors} itemSize={3} />
       </bufferGeometry>
-      <pointsMaterial size={0.12} vertexColors transparent opacity={0.7} sizeAttenuation blending={THREE.AdditiveBlending} depthWrite={false} />
+      <pointsMaterial size={0.18} vertexColors transparent opacity={0.75} sizeAttenuation blending={THREE.AdditiveBlending} depthWrite={false} map={circleTexture} />
     </points>
   )
 }
@@ -146,7 +161,7 @@ function AtmosFog({ count = 800 }) {
       <bufferGeometry>
         <bufferAttribute attach="attributes-position" count={count} array={positions} itemSize={3} />
       </bufferGeometry>
-      <pointsMaterial size={0.3} color="#8899cc" transparent opacity={0.08} sizeAttenuation blending={THREE.AdditiveBlending} depthWrite={false} />
+      <pointsMaterial size={0.5} color="#8899cc" transparent opacity={0.12} sizeAttenuation blending={THREE.AdditiveBlending} depthWrite={false} map={circleTexture} />
     </points>
   )
 }
