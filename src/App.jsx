@@ -60,7 +60,7 @@ export default function App() {
   return (
     <>
       <CustomCursor />
-      <InkShader />
+      <CloudScene />
       <div style={{ position: 'relative', zIndex: 1, color: '#fff' }}>
 
         {/* NAV */}
