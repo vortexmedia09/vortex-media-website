@@ -73,7 +73,7 @@ export default function App() {
         <div style={{display:'flex',alignItems:'center',gap:24}}>
           {['Services','Process','Contact'].map(s => (
             <a key={s} href={'#'+s.toLowerCase()} className="interactive"
-              style={{fontSize:13,fontWeight:500,color:'rgba(22,24,31,0.6)',transition:'color 0.3s'}}
+              style={{fontSize:13,fontWeight:500,color:'#2A2A3A',transition:'color 0.3s'}}
               onMouseEnter={e=>e.target.style.color='var(--accent)'}
               onMouseLeave={e=>e.target.style.color='rgba(22,24,31,0.4)'}>{s}</a>
           ))}
@@ -110,7 +110,7 @@ export default function App() {
             onMouseLeave={e=>{e.currentTarget.style.transform='none';e.currentTarget.style.boxShadow='0 8px 40px rgba(242,85,44,0.3)'}}>
             Start a Project
           </a>
-          <a href="#services" className="interactive" style={{padding:'16px 36px',borderRadius:99,background:'transparent',color:'rgba(22,24,31,0.5)',fontSize:15,fontWeight:600,fontFamily:'var(--font-body)',border:'1.5px solid rgba(22,24,31,0.1)',transition:'border-color 0.3s,color 0.3s'}}
+          <a href="#services" className="interactive" style={{padding:'16px 36px',borderRadius:99,background:'transparent',color:'#3A3A4A',fontSize:15,fontWeight:600,fontFamily:'var(--font-body)',border:'1.5px solid rgba(22,24,31,0.1)',transition:'border-color 0.3s,color 0.3s'}}
             onMouseEnter={e=>{e.currentTarget.style.borderColor='var(--accent)';e.currentTarget.style.color='var(--accent)'}}
             onMouseLeave={e=>{e.currentTarget.style.borderColor='rgba(22,24,31,0.1)';e.currentTarget.style.color='rgba(22,24,31,0.5)'}}>
             Explore
@@ -128,7 +128,7 @@ export default function App() {
       <section style={{minHeight:'80vh',display:'flex',alignItems:'center',padding:'120px 48px',background:'var(--dark)'}}>
         <div style={{maxWidth:900}}>
           <div style={{overflow:'hidden',marginBottom:8}}>
-            <div className="line-reveal" style={{fontFamily:'var(--font-display)',fontSize:'clamp(36px,5.5vw,72px)',fontWeight:700,lineHeight:1.08,letterSpacing:'-0.04em',color:'rgba(255,255,255,0.45)'}}>
+            <div className="line-reveal" style={{fontFamily:'var(--font-display)',fontSize:'clamp(36px,5.5vw,72px)',fontWeight:700,lineHeight:1.08,letterSpacing:'-0.04em',color:'rgba(255,255,255,0.75)'}}>
               Integrated.
             </div>
           </div>
@@ -142,7 +142,7 @@ export default function App() {
               Built to Scale.
             </div>
           </div>
-          <p data-fade="0.3" style={{fontSize:'clamp(15px,1.6vw,18px)',color:'rgba(255,255,255,0.6)',maxWidth:560,lineHeight:1.8,fontFamily:'var(--font-body)'}}>
+          <p data-fade="0.3" style={{fontSize:'clamp(15px,1.6vw,18px)',color:'rgba(255,255,255,0.85)',maxWidth:560,lineHeight:1.8,fontFamily:'var(--font-body)'}}>
             An advanced marketing and brand consultancy engineered for scale.
             We partner with ambitious organisations to solve complex challenges
             with clarity, data, and design.
@@ -172,12 +172,12 @@ export default function App() {
           }}
             onMouseEnter={e=>e.currentTarget.style.background='rgba(242,85,44,0.02)'}
             onMouseLeave={e=>e.currentTarget.style.background='transparent'}>
-            <span style={{fontFamily:'var(--font-display)',fontSize:13,fontWeight:700,color:'rgba(22,24,31,0.3)',letterSpacing:'0.06em',width:48,flexShrink:0}}>{String(i+1).padStart(2,'0')}</span>
+            <span style={{fontFamily:'var(--font-display)',fontSize:13,fontWeight:700,color:'#5A5A6A',letterSpacing:'0.06em',width:48,flexShrink:0}}>{String(i+1).padStart(2,'0')}</span>
             <div style={{width:8,height:8,borderRadius:'50%',background:s.color,marginRight:32,flexShrink:0,boxShadow:'0 0 12px '+s.color+'88'}} />
             <span style={{fontFamily:'var(--font-display)',fontSize:'clamp(18px,2.5vw,28px)',fontWeight:700,color:'var(--dark)',flex:1,letterSpacing:'-0.02em'}}>{s.title}</span>
             <div style={{display:'flex',flexWrap:'wrap',gap:8,maxWidth:400,justifyContent:'flex-end'}}>
               {s.items.slice(0,3).map(item => (
-                <span key={item} style={{fontSize:11,fontWeight:500,color:'rgba(22,24,31,0.5)',padding:'4px 10px',borderRadius:99,background:'rgba(22,24,31,0.06)',border:'1px solid rgba(22,24,31,0.1)'}}>{item}</span>
+                <span key={item} style={{fontSize:11,fontWeight:500,color:'#3A3A4A',padding:'4px 10px',borderRadius:99,background:'rgba(22,24,31,0.06)',border:'1px solid rgba(22,24,31,0.1)'}}>{item}</span>
               ))}
             </div>
           </div>
@@ -209,7 +209,7 @@ export default function App() {
               <div style={{width:48,height:48,borderRadius:14,flexShrink:0,background:step.color+'18',border:'1px solid '+step.color+'33',display:'flex',alignItems:'center',justifyContent:'center',fontFamily:'var(--font-display)',fontSize:13,fontWeight:700,color:step.color,position:'relative',zIndex:1}}>{step.num}</div>
               <div>
                 <div style={{fontFamily:'var(--font-display)',fontSize:'clamp(22px,3vw,32px)',fontWeight:700,color:'#fff',marginBottom:6,letterSpacing:'-0.02em'}}>{step.title}</div>
-                <div style={{fontSize:15,color:'rgba(255,255,255,0.7)',lineHeight:1.7}}>{step.desc}</div>
+                <div style={{fontSize:15,color:'rgba(255,255,255,0.9)',lineHeight:1.7}}>{step.desc}</div>
               </div>
             </div>
           ))}
@@ -236,10 +236,27 @@ export default function App() {
                 onMouseLeave={e=>e.currentTarget.style.background='transparent'}>
                 <div style={{fontSize:11,fontWeight:700,color:'var(--accent)',letterSpacing:'0.08em',marginBottom:12,opacity:0.5}}>{String(i+1).padStart(2,'0')}</div>
                 <div style={{fontFamily:'var(--font-display)',fontSize:15,fontWeight:700,color:'var(--dark)',marginBottom:6}}>{w.title}</div>
-                <div style={{fontSize:12,color:'rgba(22,24,31,0.6)',lineHeight:1.6}}>{w.desc}</div>
+                <div style={{fontSize:12,color:'#2A2A3A',lineHeight:1.6}}>{w.desc}</div>
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* STATS — Full width numbers */}
+      <section style={{padding:'120px 48px',background:'var(--accent)',overflow:'hidden',position:'relative'}}>
+        <div style={{maxWidth:1100,margin:'0 auto',display:'grid',gridTemplateColumns:'repeat(4,1fr)',gap:0}}>
+          {[
+            {num:'6+',label:'Service Verticals'},
+            {num:'3x',label:'Average ROI'},
+            {num:'100%',label:'Strategy + Execution'},
+            {num:'∞',label:'Scalability'},
+          ].map((s,i) => (
+            <div key={s.label} data-fade={i*0.1} style={{textAlign:'center',padding:'0 24px',borderRight:i<3?'1px solid rgba(255,255,255,0.2)':'none'}}>
+              <div style={{fontFamily:'var(--font-display)',fontSize:'clamp(48px,7vw,88px)',fontWeight:700,color:'#fff',lineHeight:1,marginBottom:8,letterSpacing:'-0.04em'}}>{s.num}</div>
+              <div style={{fontSize:13,fontWeight:500,color:'rgba(255,255,255,0.7)',textTransform:'uppercase',letterSpacing:'0.12em'}}>{s.label}</div>
+            </div>
+          ))}
         </div>
       </section>
 
@@ -287,11 +304,11 @@ export default function App() {
           </div>
           <div style={{display:'flex',gap:20}}>
             {['Instagram','LinkedIn','Facebook'].map((s,i) => (
-              <a key={s} href={['https://instagram.com/vortex.agency','https://linkedin.com/company/vortexmedia09','https://facebook.com/vortexmedia09'][i]} target="_blank" rel="noreferrer" className="interactive" style={{fontSize:12,color:'rgba(255,255,255,0.45)',fontWeight:500,transition:'color 0.3s'}}
+              <a key={s} href={['https://instagram.com/vortex.agency','https://linkedin.com/company/vortexmedia09','https://facebook.com/vortexmedia09'][i]} target="_blank" rel="noreferrer" className="interactive" style={{fontSize:12,color:'rgba(255,255,255,0.75)',fontWeight:500,transition:'color 0.3s'}}
                 onMouseEnter={e=>e.target.style.color='var(--accent)'}
                 onMouseLeave={e=>e.target.style.color='rgba(255,255,255,0.2)'}>{s}</a>
             ))}
-            <a href={BRAND.os} target="_blank" rel="noreferrer" className="interactive" style={{padding:'4px 12px',borderRadius:99,fontSize:11,fontWeight:600,color:'rgba(255,255,255,0.45)',background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)',transition:'border-color 0.3s,color 0.3s'}}
+            <a href={BRAND.os} target="_blank" rel="noreferrer" className="interactive" style={{padding:'4px 12px',borderRadius:99,fontSize:11,fontWeight:600,color:'rgba(255,255,255,0.75)',background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)',transition:'border-color 0.3s,color 0.3s'}}
               onMouseEnter={e=>{e.currentTarget.style.borderColor='var(--accent)';e.currentTarget.style.color='var(--accent)'}}
               onMouseLeave={e=>{e.currentTarget.style.borderColor='rgba(255,255,255,0.06)';e.currentTarget.style.color='rgba(255,255,255,0.25)'}}>
               Team Portal
