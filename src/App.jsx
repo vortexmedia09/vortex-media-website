@@ -73,7 +73,7 @@ export default function App() {
         <div style={{display:'flex',alignItems:'center',gap:24}}>
           {['Services','Process','Contact'].map(s => (
             <a key={s} href={'#'+s.toLowerCase()} className="interactive"
-              style={{fontSize:13,fontWeight:500,color:'rgba(22,24,31,0.4)',transition:'color 0.3s'}}
+              style={{fontSize:13,fontWeight:500,color:'rgba(22,24,31,0.6)',transition:'color 0.3s'}}
               onMouseEnter={e=>e.target.style.color='var(--accent)'}
               onMouseLeave={e=>e.target.style.color='rgba(22,24,31,0.4)'}>{s}</a>
           ))}
@@ -128,7 +128,7 @@ export default function App() {
       <section style={{minHeight:'80vh',display:'flex',alignItems:'center',padding:'120px 48px',background:'var(--dark)'}}>
         <div style={{maxWidth:900}}>
           <div style={{overflow:'hidden',marginBottom:8}}>
-            <div className="line-reveal" style={{fontFamily:'var(--font-display)',fontSize:'clamp(36px,5.5vw,72px)',fontWeight:700,lineHeight:1.08,letterSpacing:'-0.04em',color:'rgba(255,255,255,0.2)'}}>
+            <div className="line-reveal" style={{fontFamily:'var(--font-display)',fontSize:'clamp(36px,5.5vw,72px)',fontWeight:700,lineHeight:1.08,letterSpacing:'-0.04em',color:'rgba(255,255,255,0.45)'}}>
               Integrated.
             </div>
           </div>
@@ -142,7 +142,7 @@ export default function App() {
               Built to Scale.
             </div>
           </div>
-          <p data-fade="0.3" style={{fontSize:'clamp(15px,1.6vw,18px)',color:'rgba(255,255,255,0.35)',maxWidth:560,lineHeight:1.8,fontFamily:'var(--font-body)'}}>
+          <p data-fade="0.3" style={{fontSize:'clamp(15px,1.6vw,18px)',color:'rgba(255,255,255,0.6)',maxWidth:560,lineHeight:1.8,fontFamily:'var(--font-body)'}}>
             An advanced marketing and brand consultancy engineered for scale.
             We partner with ambitious organisations to solve complex challenges
             with clarity, data, and design.
@@ -209,7 +209,7 @@ export default function App() {
               <div style={{width:48,height:48,borderRadius:14,flexShrink:0,background:step.color+'18',border:'1px solid '+step.color+'33',display:'flex',alignItems:'center',justifyContent:'center',fontFamily:'var(--font-display)',fontSize:13,fontWeight:700,color:step.color,position:'relative',zIndex:1}}>{step.num}</div>
               <div>
                 <div style={{fontFamily:'var(--font-display)',fontSize:'clamp(22px,3vw,32px)',fontWeight:700,color:'#fff',marginBottom:6,letterSpacing:'-0.02em'}}>{step.title}</div>
-                <div style={{fontSize:15,color:'rgba(255,255,255,0.5)',lineHeight:1.7}}>{step.desc}</div>
+                <div style={{fontSize:15,color:'rgba(255,255,255,0.7)',lineHeight:1.7}}>{step.desc}</div>
               </div>
             </div>
           ))}
@@ -236,7 +236,7 @@ export default function App() {
                 onMouseLeave={e=>e.currentTarget.style.background='transparent'}>
                 <div style={{fontSize:11,fontWeight:700,color:'var(--accent)',letterSpacing:'0.08em',marginBottom:12,opacity:0.5}}>{String(i+1).padStart(2,'0')}</div>
                 <div style={{fontFamily:'var(--font-display)',fontSize:15,fontWeight:700,color:'var(--dark)',marginBottom:6}}>{w.title}</div>
-                <div style={{fontSize:12,color:'rgba(22,24,31,0.4)',lineHeight:1.6}}>{w.desc}</div>
+                <div style={{fontSize:12,color:'rgba(22,24,31,0.6)',lineHeight:1.6}}>{w.desc}</div>
               </div>
             ))}
           </div>
@@ -283,15 +283,15 @@ export default function App() {
         <div style={{maxWidth:1100,margin:'0 auto',display:'flex',alignItems:'center',justifyContent:'space-between',flexWrap:'wrap',gap:16}}>
           <div style={{display:'flex',alignItems:'center',gap:10}}>
             <img src="/vortex-rocket.png" alt="" style={{width:20}} />
-            <span style={{fontFamily:'var(--font-display)',fontSize:13,fontWeight:700,color:'rgba(255,255,255,0.3)'}}>VORTEX<span style={{color:'var(--accent)'}}>.</span>MEDIA</span>
+            <span style={{fontFamily:'var(--font-display)',fontSize:13,fontWeight:700,color:'rgba(255,255,255,0.5)'}}>VORTEX<span style={{color:'var(--accent)'}}>.</span>MEDIA</span>
           </div>
           <div style={{display:'flex',gap:20}}>
             {['Instagram','LinkedIn','Facebook'].map((s,i) => (
-              <a key={s} href={['https://instagram.com/vortex.agency','https://linkedin.com/company/vortexmedia09','https://facebook.com/vortexmedia09'][i]} target="_blank" rel="noreferrer" className="interactive" style={{fontSize:12,color:'rgba(255,255,255,0.2)',fontWeight:500,transition:'color 0.3s'}}
+              <a key={s} href={['https://instagram.com/vortex.agency','https://linkedin.com/company/vortexmedia09','https://facebook.com/vortexmedia09'][i]} target="_blank" rel="noreferrer" className="interactive" style={{fontSize:12,color:'rgba(255,255,255,0.45)',fontWeight:500,transition:'color 0.3s'}}
                 onMouseEnter={e=>e.target.style.color='var(--accent)'}
                 onMouseLeave={e=>e.target.style.color='rgba(255,255,255,0.2)'}>{s}</a>
             ))}
-            <a href={BRAND.os} target="_blank" rel="noreferrer" className="interactive" style={{padding:'4px 12px',borderRadius:99,fontSize:11,fontWeight:600,color:'rgba(255,255,255,0.25)',background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)',transition:'border-color 0.3s,color 0.3s'}}
+            <a href={BRAND.os} target="_blank" rel="noreferrer" className="interactive" style={{padding:'4px 12px',borderRadius:99,fontSize:11,fontWeight:600,color:'rgba(255,255,255,0.45)',background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.06)',transition:'border-color 0.3s,color 0.3s'}}
               onMouseEnter={e=>{e.currentTarget.style.borderColor='var(--accent)';e.currentTarget.style.color='var(--accent)'}}
               onMouseLeave={e=>{e.currentTarget.style.borderColor='rgba(255,255,255,0.06)';e.currentTarget.style.color='rgba(255,255,255,0.25)'}}>
               Team Portal
