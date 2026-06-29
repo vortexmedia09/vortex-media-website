@@ -31,7 +31,7 @@ function VortexParticles({ count = 1200 }) {
     ]
     for (let i = 0; i < count; i++) {
       const angle = Math.random() * Math.PI * 2
-      const radius = 3 + Math.random() * 18
+      const radius = 1 + Math.random() * 14
       const height = (Math.random() - 0.5) * 30
       pos[i * 3] = Math.cos(angle) * radius
       pos[i * 3 + 1] = height
@@ -51,7 +51,7 @@ function VortexParticles({ count = 1200 }) {
     const posArr = ref.current.geometry.attributes.position.array
 
     // Vortex speed increases slightly with scroll
-    const speed = 0.15 + p * 0.1
+    const speed = 0.25 + p * 0.15
     // Vortex tightness: starts tight, expands as you scroll, then settles
     const expansion = 1 + Math.sin(p * Math.PI) * 0.6
 
@@ -82,10 +82,10 @@ function VortexParticles({ count = 1200 }) {
         <bufferAttribute attach="attributes-color" count={count} array={colors} itemSize={3} />
       </bufferGeometry>
       <pointsMaterial
-        size={0.12}
+        size={0.15}
         vertexColors
         transparent
-        opacity={0.75}
+        opacity={0.85}
         sizeAttenuation
         depthWrite={false}
       />
@@ -107,9 +107,9 @@ function FloatingRings() {
   return (
     <group ref={group}>
       {[
-        { radius: 8, tube: 0.02, color: '#F2552C', opacity: 0.18 },
-        { radius: 12, tube: 0.015, color: '#D4A853', opacity: 0.14 },
-        { radius: 16, tube: 0.01, color: '#3B82F6', opacity: 0.10 },
+        { radius: 8, tube: 0.02, color: '#F2552C', opacity: 0.25 },
+        { radius: 12, tube: 0.015, color: '#D4A853', opacity: 0.18 },
+        { radius: 16, tube: 0.01, color: '#3B82F6', opacity: 0.14 },
       ].map((r, i) => (
         <mesh key={i} rotation={[Math.PI * 0.3 * i, 0, Math.PI * 0.2 * i]}>
           <torusGeometry args={[r.radius, r.tube, 16, 100]} />
@@ -154,7 +154,7 @@ export default function LaunchScene() {
       >
         <color attach="background" args={['#F7F3EC']} />
         <ambientLight intensity={0.8} />
-        <VortexParticles count={2000} />
+        <VortexParticles count={2500} />
         <FloatingRings />
         <CameraController />
       </Canvas>

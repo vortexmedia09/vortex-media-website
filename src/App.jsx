@@ -7,6 +7,7 @@ import LaunchScene from './components/LaunchScene'
 import CustomCursor from './components/CustomCursor'
 import ScrollRocket from './components/ScrollRocket'
 import { BRAND, SERVICES, PROCESS, WHY_US } from './data/content'
+import Marquee from './components/Marquee'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -121,6 +122,8 @@ export default function App() {
         </div>
       </section>
 
+      <Marquee />
+
       {/* 02: STATEMENT */}
       <section style={{minHeight:'80vh',display:'flex',alignItems:'center',padding:'120px 48px',background:'var(--dark)'}}>
         <div style={{maxWidth:900}}>
@@ -169,12 +172,12 @@ export default function App() {
           }}
             onMouseEnter={e=>e.currentTarget.style.background='rgba(242,85,44,0.02)'}
             onMouseLeave={e=>e.currentTarget.style.background='transparent'}>
-            <span style={{fontFamily:'var(--font-display)',fontSize:13,fontWeight:700,color:'rgba(22,24,31,0.2)',letterSpacing:'0.06em',width:48,flexShrink:0}}>{String(i+1).padStart(2,'0')}</span>
+            <span style={{fontFamily:'var(--font-display)',fontSize:13,fontWeight:700,color:'rgba(22,24,31,0.3)',letterSpacing:'0.06em',width:48,flexShrink:0}}>{String(i+1).padStart(2,'0')}</span>
             <div style={{width:8,height:8,borderRadius:'50%',background:s.color,marginRight:32,flexShrink:0,boxShadow:'0 0 12px '+s.color+'88'}} />
             <span style={{fontFamily:'var(--font-display)',fontSize:'clamp(18px,2.5vw,28px)',fontWeight:700,color:'var(--dark)',flex:1,letterSpacing:'-0.02em'}}>{s.title}</span>
             <div style={{display:'flex',flexWrap:'wrap',gap:8,maxWidth:400,justifyContent:'flex-end'}}>
               {s.items.slice(0,3).map(item => (
-                <span key={item} style={{fontSize:11,fontWeight:500,color:'rgba(22,24,31,0.35)',padding:'4px 10px',borderRadius:99,background:'rgba(22,24,31,0.04)',border:'1px solid rgba(22,24,31,0.06)'}}>{item}</span>
+                <span key={item} style={{fontSize:11,fontWeight:500,color:'rgba(22,24,31,0.5)',padding:'4px 10px',borderRadius:99,background:'rgba(22,24,31,0.06)',border:'1px solid rgba(22,24,31,0.1)'}}>{item}</span>
               ))}
             </div>
           </div>
@@ -183,6 +186,8 @@ export default function App() {
           <div style={{borderTop:'1px solid rgba(22,24,31,0.07)'}} />
         </div>
       </section>
+
+      <Marquee dark />
 
       {/* 04: PROCESS */}
       <section id="process" style={{padding:'160px 48px',background:'var(--dark)'}}>
@@ -204,12 +209,14 @@ export default function App() {
               <div style={{width:48,height:48,borderRadius:14,flexShrink:0,background:step.color+'18',border:'1px solid '+step.color+'33',display:'flex',alignItems:'center',justifyContent:'center',fontFamily:'var(--font-display)',fontSize:13,fontWeight:700,color:step.color,position:'relative',zIndex:1}}>{step.num}</div>
               <div>
                 <div style={{fontFamily:'var(--font-display)',fontSize:'clamp(22px,3vw,32px)',fontWeight:700,color:'#fff',marginBottom:6,letterSpacing:'-0.02em'}}>{step.title}</div>
-                <div style={{fontSize:15,color:'rgba(255,255,255,0.35)',lineHeight:1.7}}>{step.desc}</div>
+                <div style={{fontSize:15,color:'rgba(255,255,255,0.5)',lineHeight:1.7}}>{step.desc}</div>
               </div>
             </div>
           ))}
         </div>
       </section>
+
+      <Marquee />
 
       {/* 05: WHY */}
       <section style={{padding:'160px 48px',background:'var(--cream)'}}>
@@ -222,7 +229,7 @@ export default function App() {
               Strategy + Execution<br /><span style={{color:'var(--accent)'}}>= Scalable Results.</span>
             </div>
           </div>
-          <div style={{display:'grid',gridTemplateColumns:'repeat(5,1fr)',gap:0,borderTop:'1px solid rgba(22,24,31,0.08)',borderLeft:'1px solid rgba(22,24,31,0.08)'}}>
+          <div style={{display:'grid',gridTemplateColumns:'repeat(3,1fr)',gap:0,borderTop:'1px solid rgba(22,24,31,0.08)',borderLeft:'1px solid rgba(22,24,31,0.08)'}}>
             {WHY_US.map((w,i) => (
               <div key={w.title} data-fade={i*0.08} className="interactive" style={{padding:'32px 24px',borderRight:'1px solid rgba(22,24,31,0.08)',borderBottom:'1px solid rgba(22,24,31,0.08)',transition:'background 0.4s'}}
                 onMouseEnter={e=>e.currentTarget.style.background='rgba(242,85,44,0.03)'}
