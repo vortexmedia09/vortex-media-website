@@ -197,6 +197,8 @@ export default function App() {
           </div>
         </div>
 
+        <ClientSection />
+
         {/* PROCESS */}
         <section id="process" style={{ padding: '140px 48px' }}>
           <div style={{ maxWidth: 800, margin: '0 auto' }}>
