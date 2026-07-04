@@ -5,6 +5,8 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import Preloader from './components/Preloader'
 import CloudScene from './components/CloudScene'
 import CustomCursor from './components/CustomCursor'
+import Blog from './components/Blog'
+import { BrowserRouter, Routes, Route, useParams } from 'react-router-dom'
 import { BRAND, SERVICES, PROCESS, WHY_US } from './data/content'
 
 gsap.registerPlugin(ScrollTrigger)
@@ -58,7 +60,11 @@ export default function App() {
   )
 
   return (
-    <>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/blog/:slug" element={<BlogPost />} />
+        <Route path="/blog" element={<BlogListing />} />
+        <Route path="/*" element={<>
       <CustomCursor />
       <CloudScene />
       <div style={{ position: 'relative', zIndex: 1, color: '#fff' }}>
@@ -311,6 +317,25 @@ export default function App() {
           }
         `}</style>
       </div>
-    </>
+    </>} />
+      </Routes>
+    </BrowserRouter>
+  )
+}
+
+function BlogPost() {
+  const { slug } = useParams()
+  return (
+    <div style={{background:'#0E0E12',minHeight:'100vh'}}>
+      <Blog single={true} slug={slug} />
+    </div>
+  )
+}
+
+function BlogListing() {
+  return (
+    <div style={{background:'#0E0E12',minHeight:'100vh'}}>
+      <Blog />
+    </div>
   )
 }
