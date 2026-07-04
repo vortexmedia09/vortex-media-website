@@ -6,6 +6,7 @@ import Preloader from './components/Preloader'
 import CloudScene from './components/CloudScene'
 import CustomCursor from './components/CustomCursor'
 import Blog from './components/Blog'
+import ClientSection from './components/ClientSection'
 import { BrowserRouter, Routes, Route, useParams } from 'react-router-dom'
 import { BRAND, SERVICES, PROCESS, WHY_US } from './data/content'
 
